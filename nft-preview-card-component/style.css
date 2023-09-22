@@ -1,0 +1,184 @@
+:root {
+  --clr-primary: hsl(215, 51%, 70%);
+  --clr-secondary: hsl(178, 100%, 50%);
+  --clr-blue-400: hsl(215, 32%, 27%);
+  --clr-blue-500: hsl(216, 50%, 16%);
+  --clr-blue-600: hsl(217, 54%, 11%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-base: "Outfit", sans-serif;
+
+  --fw-thin: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 👋 */
+body {
+  background-color: var(--clr-blue-600);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  --border-rdx: 1rem;
+
+  width: 330px;
+  padding: 1.5rem;
+  font-size: 18px;
+  font-weight: var(--fw-thin);
+  background-color: var(--clr-blue-500);
+  color: var(--clr-primary);
+  border-radius: var(--border-rdx);
+}
+
+.card__img {
+  border-radius: var(--border-rdx);
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.card__img::before {
+  opacity: 0;
+
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: hsla(178, 100%, 50%, 0.4);
+  background-image: url(./images/icon-view.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: all 0.3s;
+}
+
+.card__img:hover::before {
+  opacity: 1;
+}
+
+.card__title {
+  color: var(--clr-white);
+  font-size: 24px;
+  font-weight: var(--fw-bold);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.card__title:hover {
+  color: var(--clr-secondary);
+}
+
+.card__other {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__other > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__other div:first-child {
+  color: var(--clr-secondary);
+  font-weight: var(--fw-bold);
+}
+
+.author {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  border-top: solid 1px var(--clr-blue-400);
+  padding: 1rem 0;
+}
+
+.author__img {
+  width: 48px;
+  height: 48px;
+  border: solid 2px var(--clr-white);
+  border-radius: 50%;
+}
+
+.author__name {
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+.author__name:hover {
+  color: var(--clr-secondary);
+}
+
+.footer {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--clr-white);
+}
+
+.footer a {
+  color: var(--clr-primary);
+}
