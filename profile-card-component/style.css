@@ -1,0 +1,175 @@
+:root {
+  --clr-primary: hsl(185, 75%, 39%);
+  --clr-neutral-400: hsl(0, 0%, 59%);
+  --clr-neutral-500: hsl(227, 10%, 46%);
+  --clr-neutral-600: hsl(229, 23%, 23%);
+
+  --ff-base: "Kumbh Sans", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 👋 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--ff-base);
+  font-size: 1.6rem;
+  background-color: var(--clr-primary);
+}
+
+body::before,
+body::after {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+body::before {
+  background-image: url(./images/bg-pattern-top.svg);
+  background-position: right bottom;
+  transform: translate(-50%, -50%);
+}
+
+body::after {
+  background-image: url(./images/bg-pattern-bottom.svg);
+  background-position: left top;
+  transform: translate(50%, 50%);
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 35rem;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__hero {
+  height: 14.2rem;
+  background-image: url(./images/bg-pattern-card.svg);
+  background-size: contain;
+}
+
+.card__content {
+  position: relative;
+}
+
+.profile__img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: solid 5px white;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile__content {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: var(--clr-neutral-500);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile__name,
+.profile__stat {
+  font-size: 1.8rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-600);
+}
+
+.profile__stats {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid 1px var(--clr-neutral-400);
+  padding-top: 1.5rem;
+}
+
+.footer {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: var(--clr-neutral-600);
+}
+
+.footer a:hover,
+.footer a:active {
+  color: var(--clr-neutral-500);
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 56.25%;
+  }
+}
