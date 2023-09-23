@@ -1,0 +1,176 @@
+:root {
+  --clr-primary: hsl(225, 100%, 94%);
+  --clr-secondary: hsl(245, 75%, 52%);
+  --clr-neutral-400: hsl(225, 100%, 98%);
+  --clr-neutral-500: hsl(224, 23%, 55%);
+  --clr-neutral-600: hsl(223, 47%, 23%);
+
+  --ff-base: "Red Hat Display", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 👋 */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--clr-primary);
+  font-family: var(--ff-base);
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order {
+  --border-rdx: 1rem;
+
+  max-width: 25rem;
+  background-color: white;
+  border-radius: var(--border-rdx);
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.order__content {
+  padding: 2rem;
+  text-align: center;
+  color: var(--clr-neutral-500);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order__title {
+  color: var(--clr-neutral-600);
+  font-size: 1.75rem;
+  font-weight: var(--fw-black);
+}
+
+.order__plan {
+  background-color: var(--clr-neutral-400);
+  padding: 1rem;
+  border-radius: var(--border-rdx);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.plan__name {
+  font-weight: var(--fw-black);
+  color: var(--clr-neutral-600);
+}
+
+.plan__change {
+  margin-left: auto;
+  font-weight: var(--fw-bold);
+  color: var(--clr-secondary);
+}
+
+.plan__change:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.order__btn {
+  font-weight: var(--fw-bold);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: var(--clr-secondary);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.order__btn:hover {
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+.order__btn--outline {
+  background-color: white;
+  color: var(--clr-neutral-500);
+}
+
+.order__btn--outline:hover {
+  color: var(--clr-neutral-600);
+  opacity: 1;
+}
+
+.footer {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: var(--clr-neutral-600);
+}
+
+.footer a:hover,
+.footer a:active {
+  color: var(--clr-secondary);
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 12px;
+  }
+}
