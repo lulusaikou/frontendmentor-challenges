@@ -65,6 +65,9 @@ body {
 
   background-color: var(--clr-primary);
   font-family: var(--ff-base);
+  background-image: url(./images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 main {
@@ -78,7 +81,7 @@ main {
 .order {
   --border-rdx: 1rem;
 
-  max-width: 25rem;
+  max-width: 25.375rem;
   background-color: white;
   border-radius: var(--border-rdx);
   overflow: hidden;
@@ -172,5 +175,9 @@ main {
 @media (max-width: 34em) {
   html {
     font-size: 12px;
+  }
+
+  body {
+    background-image: url(./images/pattern-background-mobile.svg);
   }
 }
