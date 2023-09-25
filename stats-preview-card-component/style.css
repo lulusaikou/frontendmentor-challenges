@@ -1,0 +1,172 @@
+:root {
+  --clr-primary: hsl(233, 47%, 7%);
+  --clr-secondary: hsl(244, 38%, 16%);
+  --clr-accent: hsl(277, 64%, 61%);
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-600: hsla(0, 0%, 100%, 0.6);
+
+  --ff-base: "Inter", sans-serif;
+  --ff-accent: "Lexend Deca", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 👋 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--clr-primary);
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  max-width: 86.4rem;
+  background-color: var(--clr-secondary);
+  color: var(--clr-neutral-500);
+  font-size: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.preview__content {
+  padding: 5.6rem;
+}
+
+.preview__title {
+  color: var(--clr-neutral-400);
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.preview__title--accent {
+  color: var(--clr-accent);
+}
+
+.preview__text {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.preview__stats {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.preview__stats strong {
+  color: var(--clr-neutral-400);
+  font-size: 2rem;
+}
+
+.preview__hero {
+  background-image: url(./images/image-header-desktop.jpg);
+  background-size: cover;
+  background-color: var(--clr-accent);
+  background-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+.footer {
+  margin: 1rem 0;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 47em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .preview__hero {
+    background-image: url(./images/image-header-mobile.jpg);
+  }
+}
+
+@media (max-width: 38em) {
+  .preview {
+    grid-template-columns: 1fr;
+    max-width: 35rem;
+    margin: 3rem 0;
+  }
+
+  .preview__content {
+    padding: 5rem;
+    text-align: center;
+  }
+
+  .preview__stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .preview__hero {
+    height: 23rem;
+    grid-row: 1;
+  }
+}
