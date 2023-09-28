@@ -1,0 +1,180 @@
+:root {
+  --clr-cyan: hsl(179, 62%, 43%);
+  --clr-yellow: hsl(71, 73%, 54%);
+  --clr-neutral-400: hsl(204, 43%, 93%);
+  --clr-neutral-500: hsl(218, 22%, 67%);
+
+  --ff-base: "Karla", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 👋 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-neutral-400);
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  --content-spacing: 4rem;
+
+  max-width: 65rem;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content__intro {
+  grid-column: 1 / -1;
+  background-color: white;
+  padding: var(--content-spacing);
+  color: var(--clr-neutral-500);
+}
+
+.intro__title {
+  color: var(--clr-cyan);
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.intro__accent {
+  color: var(--clr-yellow);
+  font-weight: var(--fw-bold);
+  margin-bottom: 2rem;
+}
+
+.content__cta {
+  background-color: var(--clr-cyan);
+  padding: var(--content-spacing);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--clr-neutral-400);
+}
+
+.price {
+  font-size: 3rem;
+  color: white;
+}
+
+.btn {
+  border: none;
+  padding: 1rem;
+  color: white;
+  background-color: var(--clr-yellow);
+  font-weight: var(--fw-bold);
+}
+
+.content__why {
+  background-color: var(--clr-cyan);
+  padding: var(--content-spacing);
+  color: white;
+  opacity: 0.8;
+}
+
+.why__list {
+  padding: 0;
+  list-style: none;
+}
+
+.footer {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: var(--clr-neutral-500);
+}
+
+@media (max-width: 37em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    padding: 5%;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
