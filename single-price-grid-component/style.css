@@ -141,6 +141,14 @@ main {
   color: white;
   background-color: var(--clr-yellow);
   font-weight: var(--fw-bold);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
 
 .content__why {
